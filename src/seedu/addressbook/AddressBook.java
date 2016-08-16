@@ -144,6 +144,8 @@ public class AddressBook {
     private static final String PERSON_PROPERTY_NAME = "name";
     private static final String PERSON_PROPERTY_PHONE = "phone";
     private static final String PERSON_PROPERTY_EMAIL = "email";
+    
+    private enum PersonProperty {NAME, EMAIL, PHONE};
 
     /**
      * The number of data elements for a single person.
@@ -861,9 +863,9 @@ public class AddressBook {
      */
     private static HashMap<String, String> makePersonFromData(String name, String phone, String email) {
     	HashMap<String, String> newPerson = new HashMap<String, String>();
-    	newPerson.put(PERSON_PROPERTY_NAME, name);
-    	newPerson.put(PERSON_PROPERTY_PHONE, phone);
-    	newPerson.put(PERSON_PROPERTY_EMAIL, email);
+    	newPerson.put(PersonProperty.NAME, name);
+    	newPerson.put(PersonProperty.PHONE, phone);
+    	newPerson.put(PersonProperty.EMAIL, email);
     	return newPerson;
     }
 
