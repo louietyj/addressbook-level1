@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Scanner;
@@ -873,12 +872,9 @@ public class AddressBook {
      * @param person to be encoded
      * @return encoded string
      */
-    private static HashMap<String, String> encodePersonToString(String[] person) {
-    	HashMap<String, String> newPerson = new HashMap<String, String>();
-    	newPerson.put(PERSON_PROPERTY_NAME, getNameFromPerson(person));
-    	newPerson.put(PERSON_PROPERTY_PHONE, getPhoneFromPerson(person));
-    	newPerson.put(PERSON_PROPERTY_EMAIL, getEmailFromPerson(person));
-    	return newPerson;
+    private static String encodePersonToString(String[] person) {
+        return String.format(PERSON_STRING_REPRESENTATION,
+                getNameFromPerson(person), getPhoneFromPerson(person), getEmailFromPerson(person));
     }
 
     /**
