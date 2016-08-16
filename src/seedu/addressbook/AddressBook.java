@@ -831,24 +831,24 @@ public class AddressBook {
      * @param person whose name you want
      * @return person's name
      */
-    private static String getNameFromPerson(String[] person) {
-        return person[PERSON_DATA_INDEX_NAME];
+    private static String getNameFromPerson(HashMap<String, String> person) {
+        return person.get(PERSON_PROPERTY_NAME);
     }
 
     /**
      * @param person whose phone number you want
      * @return person's phone number
      */
-    private static String getPhoneFromPerson(String[] person) {
-        return person[PERSON_DATA_INDEX_PHONE];
+    private static String getPhoneFromPerson(HashMap<String, String> person) {
+    	return person.get(PERSON_PROPERTY_PHONE);
     }
 
     /**
      * @param person whose email you want
      * @return person's email
      */
-    private static String getEmailFromPerson(String[] person) {
-        return person[PERSON_DATA_INDEX_EMAIL];
+    private static String getEmailFromPerson(HashMap<String, String> person) {
+    	return person.get(PERSON_PROPERTY_EMAIL);
     }
 
     /**
